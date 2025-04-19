@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Загадочные Открытки</title>
   <style>
     body {
@@ -62,14 +62,24 @@
       margin-top: 40px;
     }
 
-    .gallery img {
-      width: 300px;
+    .card {
+      max-width: 300px;
+      max-height: 220px;
+      overflow: hidden;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      background-color: #fff;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
       transition: transform 0.3s ease;
     }
 
-    .gallery img:hover {
+    .card:hover img {
       transform: scale(1.05);
     }
 
@@ -82,7 +92,6 @@
   </style>
 </head>
 <body>
-
   <header>
     <h1>Загадочные Открытки</h1>
     <div class="tagline">Открой тайну в каждом конверте</div>
@@ -90,23 +99,25 @@
 
   <main>
     <h2>Каждая открытка — это сюрприз</h2>
-    <p>Ты не узнаешь, что внутри, пока не откроешь. Это может быть загадка, послание, вдохновение или нечто совсем неожиданное.</p>
-    <button class="cta-button" onclick="location.href='#cards'">Посмотреть коллекцию</button>
+    <p>
+      Ты не узнаешь, что внутри, пока не откроешь. Это может быть загадка,
+      послание, вдохновение или нечто совсем неожиданное.
+    </p>
+    <button class="cta-button" onclick="location.href='#cards'">
+      Посмотреть коллекцию
+    </button>
 
     <div id="cards" class="gallery">
-      <img src="img\ot2.jpg" alt="Открытка с лисами">
-      <img src="img\ot3.jpg" alt="Открытка с котами">
-
-      <!-- Добавь свои изображения ниже, заменив your-image.jpg на нужный файл -->
-      <img src="img\ot1.jpg" alt="Заяц с морковкой">
-      <img src="img\ot4.jpg" alt="На катке">
-      <img src="img\ot5.jpg" alt="Совы">
+      <div class="card"><img src="img/ot2.jpg" alt="Открытка с лисами" /></div>
+      <div class="card"><img src="img/ot3.jpg" alt="Открытка с котами" /></div>
+      <div class="card"><img src="img/ot1.jpg" alt="Заяц с морковкой" /></div>
+      <div class="card"><img src="img/ot4.jpg" alt="На катке" /></div>
+      <div class="card"><img src="img/ot5.jpg" alt="Совы" /></div>
     </div>
   </main>
 
   <footer>
     © 2025 Загадочные Открытки. Все права защищены.
   </footer>
-
 </body>
 </html>
