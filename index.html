@@ -63,8 +63,9 @@
     }
 
     .card {
-      max-width: 300px;
-      max-height: 220px;
+      position: relative;
+      width: 300px;
+      height: 220px;
       overflow: hidden;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -73,14 +74,34 @@
 
     .card img {
       width: 100%;
-      height: auto;
-      display: block;
+      height: 100%;
       object-fit: cover;
-      transition: transform 0.3s ease;
+      transition: transform 0.4s ease, object-fit 0.4s ease;
+      display: block;
     }
 
     .card:hover img {
-      transform: scale(1.05);
+      transform: scale(1.4);
+      object-fit: contain;
+      background-color: #fff;
+    }
+
+    .card .description {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 10px;
+      font-size: 0.95em;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      text-align: center;
+    }
+
+    .card:hover .description {
+      opacity: 1;
     }
 
     footer {
@@ -108,11 +129,26 @@
     </button>
 
     <div id="cards" class="gallery">
-      <div class="card"><img src="img/ot2.jpg" alt="Открытка с лисами" /></div>
-      <div class="card"><img src="img/ot3.jpg" alt="Открытка с котами" /></div>
-      <div class="card"><img src="img/ot1.jpg" alt="Заяц с морковкой" /></div>
-      <div class="card"><img src="img/ot4.jpg" alt="На катке" /></div>
-      <div class="card"><img src="img/ot5.jpg" alt="Совы" /></div>
+      <div class="card">
+        <img src="img/ot2.jpg" alt="Открытка с лисами" />
+        <div class="description">Два лиса смотрят в даль</div>
+      </div>
+      <div class="card">
+        <img src="img/ot3.jpg" alt="Открытка с котами" />
+        <div class="description">Три пушистых друга на закате</div>
+      </div>
+      <div class="card">
+        <img src="img/ot1.jpg" alt="Заяц с морковкой" />
+        <div class="description">Заяц прячет морковку (или нет?)</div>
+      </div>
+      <div class="card">
+        <img src="img/ot4.jpg" alt="На катке" />
+        <div class="description">Зимняя прогулка на коньках</div>
+      </div>
+      <div class="card">
+        <img src="img/ot5.jpg" alt="Совы" />
+        <div class="description">Мудрые совы на дереве</div>
+      </div>
     </div>
   </main>
 
